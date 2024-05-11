@@ -31,8 +31,8 @@
 
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ExportDir)/$(TargetName)/" />
     
-    <Copy Condition="'$(DocumentationFile)' != ''" SourceFiles="ReadMe.md;$(TargetPath);$(TargetDir)/$(TargetName).pdb;$(TargetDir)/$(TargetName).xml" DestinationFolder="$(ExportDir)/$(TargetName)/zip/" />
-    <Copy Condition="'$(DocumentationFile)' == ''" SourceFiles="ReadMe.md;$(TargetPath);$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(ExportDir)/$(TargetName)/zip/" />
+    <Copy Condition="'$(DocumentationFile)' != ''" SourceFiles="../ReadMe.md;$(TargetPath);$(TargetDir)/$(TargetName).pdb;$(TargetDir)/$(TargetName).xml" DestinationFolder="$(ExportDir)/$(TargetName)/zip/" />
+    <Copy Condition="'$(DocumentationFile)' == ''" SourceFiles="../ReadMe.md;$(TargetPath);$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(ExportDir)/$(TargetName)/zip/" />
     
     <ZipDirectory SourceDirectory="$(ExportDir)/$(TargetName)/zip/" DestinationFile="$(ExportDir)/$(TargetName)/$(TargetName).zip" />
     <RemoveDir Directories="$(ExportDir)/$(TargetName)/zip/" />
@@ -74,6 +74,10 @@
     </Reference>
     <Reference Include="ItemSync">
       <HintPath>$(HollowKnightRefs)\Mods\ItemSync\ItemSync.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MagicUI">
+      <HintPath>$(HollowKnightRefs)\Mods\MagicUI\MagicUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MapChanger">
@@ -445,5 +449,50 @@
     <None Include="../.gitignore" />
     <None Include="../ReadMe.md" />
     <None Include="Resources\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.Core">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.Data">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.IO.Compression.FileSystem">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.Numerics">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.Xml">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 </Project>

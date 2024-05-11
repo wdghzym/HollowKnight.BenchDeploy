@@ -37,11 +37,11 @@ namespace BenchDeploy
             {
                 try
                 {
-                    _map = JsonUtil.Deserialize<Dictionary<string, string>>($"{nameof(MapSyncMod)}.Resources.Langs.{name}.json");
+                    _map = JsonUtil.Deserialize<Dictionary<string, string>>($"{nameof(BenchDeploy)}.Resources.Langs.{name}.json");
                 }
                 catch (Exception e)
                 {
-                    MapSyncMod.Instance.Log($"Error changing language to {code}: {e}");
+                    BenchDeploy.LogDebug($"Error changing language to {code}: {e}");
                     _map = null;
                 }
             }
@@ -68,7 +68,7 @@ namespace BenchDeploy
             return _map is not null && _map.TryGetValue(text, out string newText) ? newText : text;
         }
         //public static string BL(this string text) => Benchwarp.Localization.Localize(text);
-        public static string BL(this string text) => Localize(text);
+        public static string BL(this string text) => Benchwarp.Localization.Localize(Localize(text));
         public static string L(this string text) => Localize(text);
     }
 }
