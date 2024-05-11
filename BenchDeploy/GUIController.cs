@@ -51,6 +51,8 @@ namespace BenchDeploy
             //if (InputHandler.Instance.inputActions.left.WasPressed && InputHandler.Instance.inputActions.superDash.IsPressed)
             if (InputHandler.Instance.inputActions.superDash.WasReleased && keylength2 >= 0)
             {
+                if (keylength2 >= BenchDeploy.GS.BenchCount)
+                    keylength2 = BenchDeploy.GS.BenchCount - 1;
                 BenchManager.SetBench(keylength2);
                 keylength2 = -1;
                 TopMenu.SetClicked(null);

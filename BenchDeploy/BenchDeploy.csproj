@@ -448,7 +448,6 @@
   <ItemGroup>
     <None Include="../.gitignore" />
     <None Include="../ReadMe.md" />
-    <None Include="Resources\.gitignore" />
   </ItemGroup>
   <ItemGroup>
     <Reference Update="System">

@@ -4,16 +4,16 @@
 # BenchDeploy
 Deploy Multi Bench use controller
 
-- Deploy Bench 
-   superDash + down(Joystick / cross / keyboard) at Paused
-- Last Bench
-   superDash + up(Joystick / cross / keyboard) at Paused
-- Warp to Deployed Bench
-   superDash + left(Joystick / cross / keyboard) at Paused
+- Deploy Bench <br>
+   superDash + down(Joystick / D-Pad / keyboard) at Paused
+- Last Bench <br>
+   superDash + up(Joystick / D-Pad / keyboard) at Paused
+- Warp to Deployed Bench <br>
+   superDash + left(Joystick / D-Pad / keyboard) at Paused
 
-- Multi Bench (MAX 5 NOW)
-   Deploy Bench use superDash + down or Benchwarp hotkey DB
-   Warp Bench use superDash + left left..  or Benchwarp hotkey ..WWD
+- Multi Bench (MAX 5 NOW) <br>
+   Deploy Bench use superDash + down or Benchwarp hotkey DB <br>
+   Warp Bench use superDash + left left..  or Benchwarp hotkey ..WWD <br>
    one bench each scene
 
  # Dependencies:
@@ -30,39 +30,42 @@ Deploy Multi Bench use controller
 - UI 
   bench list select
 - other bench in scene
+- lock bench
 
 
 
 
   # BenchDeploy
-·ÅÖÃ¶à¸öÒÎ×Ó Ö§³ÖÊÖ±ú
+æ”¾ç½®å¤šä¸ªæ¤…å­ æ”¯æŒæ‰‹æŸ„
 
-- ·ÅÖÃÒÎ×Ó 
-   ³¬³å + ÏÂ(Ò¡¸Ë / Ê®×Ö¼ü / ¼üÅÌ) ÔÚÔİÍ£½çÃæ
+- æ”¾ç½®æ¤…å­  <br>
+   è¶…å†² + ä¸‹(æ‘‡æ† / åå­—é”® / é”®ç›˜) åœ¨æš‚åœç•Œé¢
 
-- ´«µ½ÉÏ¸öÒÎ×Ó
-   ³¬³å + ÉÏ(Ò¡¸Ë / Ê®×Ö¼ü / ¼üÅÌ) ÔÚÔİÍ£½çÃæ
+- ä¼ åˆ°ä¸Šä¸ªæ¤…å­ <br>
+   è¶…å†² + ä¸Š(æ‘‡æ† / åå­—é”® / é”®ç›˜) åœ¨æš‚åœç•Œé¢
 
-- ´«µ½·ÅÖÃµÄÒÎ×Ó
-   ³¬³å + ×ó(Ò¡¸Ë / Ê®×Ö¼ü / ¼üÅÌ) ÔÚÔİÍ£½çÃæ
+- ä¼ åˆ°æ”¾ç½®çš„æ¤…å­ <br>
+   è¶…å†² + å·¦(æ‘‡æ† / åå­—é”® / é”®ç›˜) åœ¨æš‚åœç•Œé¢
 
-- ¶à¸öÒÎ×Ó(×î¶à5¸ö)
-   ·ÅÖÃÒÎ×Ó  ÓÃ³¬³å+ÏÂ »òÕß ÒÎ×ÓMOD¿ì½İ¼ü "DB" 
-   ´«·ÅÖÃÒÎ×Ó ÓÃ³¬³å+×ó×ó »òÕß ÒÎ×ÓMOD¿ì½İ¼ü "WWD" 
-   Ã¿¸ö³¡¾°Ö»±£´æÒ»¸öÒÎ×Ó
+- å¤šä¸ªæ¤…å­(æœ€å¤š5ä¸ª) <br>
+   æ”¾ç½®æ¤…å­  ç”¨è¶…å†²+ä¸‹ æˆ–è€… æ¤…å­MODå¿«æ·é”® "DB"  <br>
+   ä¼ æ”¾ç½®æ¤…å­ ç”¨è¶…å†²+å·¦å·¦ æˆ–è€… æ¤…å­MODå¿«æ·é”® "WWD"  <br>
+   æ¯ä¸ªåœºæ™¯åªä¿å­˜ä¸€ä¸ªæ¤…å­
 
- # Ç°ÖÃ:
+ # å‰ç½®:
 - [Benchwarp](https://github.com/homothetyhk/HollowKnight.BenchwarpMod)
 
- # ÆäËû
-- ÊÖ±ú´«Ô­°æÒÎ×Ó [RandoMapMod](https://github.com/syyePhenomenol/RandoMapMod).
+ # å…¶ä»–
+- æ‰‹æŸ„ä¼ åŸç‰ˆæ¤…å­ [RandoMapMod](https://github.com/syyePhenomenol/RandoMapMod).
 - [Benchwarpfix](https://github.com/SFGrenade/BenchWarpFix/)
 
 
-# ÒÔºó¿ÉÄÜµÄ¸Ä½ø
-- ²Ëµ¥
-   ×Ô¶¨Òå¿ì½İ¼ü
-   ¼üÎ»¿ÉÄÜºÍDB WD³åÍ»
-- ½çÃæ
-  ÒÎ×ÓÁĞ±íÑ¡Ôñ
-- ÆäËûÒÎ×ÓÔÚ³¡¾°µÄÏÔÊ¾
+# ä»¥åå¯èƒ½çš„æ”¹è¿›
+- èœå•
+   è‡ªå®šä¹‰å¿«æ·é”® <br>
+   é”®ä½å¯èƒ½å’ŒDB WDå†²çª åŠ äº›å¼€å…³
+- ç•Œé¢
+  æ¤…å­åˆ—è¡¨é€‰æ‹©
+- å…¶ä»–æ¤…å­åœ¨åœºæ™¯çš„æ˜¾ç¤º
+- é”å®šæ¤…å­
+- è”åŠ¨åŒæ­¥?
