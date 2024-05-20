@@ -12,9 +12,14 @@ Deploy Multi Bench use controller
    superDash + left(Joystick / D-Pad / keyboard) at Paused
 
 - Multi Bench (MAX 5 NOW) <br>
-   Deploy Bench use superDash + down or Benchwarp hotkey DB <br>
-   Warp Bench use superDash + left left..  or Benchwarp hotkey ..WWD <br>
+   Deploy Bench use superDash + down (or Benchwarp hotkey DB. Disabled by default) <br>
+   Warp Bench use superDash + left left..(or Benchwarp hotkey ..WWD Disabled by default)<br>
    one bench each scene
+
+- WarpToStart <br>
+   if your bench saved in unsafe room like Dream_Final, Room_Colosseum_Bronze, Pale Court <br>
+   Try Warp To Start Bench by enter "warptostart" in game <br>
+   or Enabled "Try Warp To Start" in menu_title
 
  # Dependencies:
 - [Benchwarp](https://github.com/homothetyhk/HollowKnight.BenchwarpMod)
@@ -34,7 +39,6 @@ Deploy Multi Bench use controller
 
 
 
-
   # BenchDeploy
 放置多个椅子 支持手柄
 
@@ -48,9 +52,14 @@ Deploy Multi Bench use controller
    超冲 + 左(摇杆 / 十字键 / 键盘) 在暂停界面
 
 - 多个椅子(最多5个) <br>
-   放置椅子  用超冲+下 或者 椅子MOD快捷键 "DB"  <br>
-   传放置椅子 用超冲+左左 或者 椅子MOD快捷键 "WWD"  <br>
+   放置椅子  用超冲+下 (或者 椅子MOD快捷键 "DB" 默认不启用) <br>
+   传放置椅子 用超冲+左左.. (或者 椅子MOD快捷键 "..WWD" 默认不启用) <br>
    每个场景只保存一个椅子
+   
+- 传送到出生地 <br>
+  如果椅子保存在不安全房间而卡住 比如梦境 竞技场 苍白宫廷 <br>
+  键盘输入"warptostart"来传送到出生地 <br>
+  或者主菜单mod设置里打开"尝试传送到出生地"然后进入存档
 
  # 前置:
 - [Benchwarp](https://github.com/homothetyhk/HollowKnight.BenchwarpMod)

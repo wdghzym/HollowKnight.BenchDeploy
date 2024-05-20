@@ -8,6 +8,6 @@ namespace BenchDeploy
 {
     public class SaveSettings
     {
-        public List<Bench> Benches = new (BenchDeploy.GS.BenchCount);
+        public List<Bench> Benches = new ();
     }
 }

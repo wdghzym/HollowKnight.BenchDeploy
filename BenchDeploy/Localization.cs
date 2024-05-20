@@ -63,7 +63,7 @@ namespace BenchDeploy
 
         public static string Localize(this string text)
         {
-            //if (Benchwarp.GS.OverrideLocalization) return text;
+            if (Benchwarp.Benchwarp.GS.OverrideLocalization) return text;
 
             return _map is not null && _map.TryGetValue(text, out string newText) ? newText : text;
         }

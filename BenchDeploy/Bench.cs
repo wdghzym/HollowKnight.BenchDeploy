@@ -11,5 +11,11 @@ namespace BenchDeploy
         public float benchX;
         public float benchY;
         public string benchScene;
+
+        public Bench(string scene,float x, float y) { 
+            benchScene = scene;
+            benchX = x;
+            benchY = y;
+        }
     }
 }

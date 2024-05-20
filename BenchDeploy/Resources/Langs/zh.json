@@ -664,9 +664,16 @@
 
 
     //BenchDeploy
-    "": ""
+    "Benchs Count": "椅子数量",
+    "WWD Support": "快捷键 WWD 的支持",
+    "Disabled it if your direction binded KEY.D B W D": "如果你的方向键用到 D B W D建议关闭",
+    "Try Warp To Start": "尝试传送到出生地",
+    "if your bench saved in unsafe room": "如果你的椅子保存在不安全房间而卡住",
+    "or Enter \"warptostart\" in game": "或者卡住时输入\"warptostart\"",
+    "Enabled": "开启",
+    "Disabled": "关闭",
 
-    //"": "",
+    "": ""
 
 
 }

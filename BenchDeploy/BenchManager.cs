@@ -9,6 +9,7 @@ namespace BenchDeploy
 {
     public static class BenchManager
     {
+        public static int BenchCount = 5;
         public static void AddBench(Bench bench)
         {
             int idx = FindBench(bench.benchScene);
@@ -16,7 +17,7 @@ namespace BenchDeploy
             {
                 BenchDeploy.LS.Benches.RemoveAt(idx);
             }
-            else if (BenchDeploy.LS.Benches.Count >= BenchDeploy.GS.BenchCount)
+            else if (BenchDeploy.LS.Benches.Count >= BenchCount)
             {
                 BenchDeploy.LS.Benches.RemoveAt(0);
             }
@@ -25,7 +26,7 @@ namespace BenchDeploy
             BenchDeploy.LogDebug("Benches:");
             foreach (var item in BenchDeploy.LS.Benches)
             {
-                BenchDeploy.LogDebug($"     {item.benchScene.BL()} {item.benchX} {item.benchY}");
+                BenchDeploy.LogDebug($"-{item.benchScene}={item.benchX}/{item.benchY}*");
             }
         }
         public static void SetBench(int idx)

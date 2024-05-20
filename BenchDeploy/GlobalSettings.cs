@@ -8,6 +8,7 @@ namespace BenchDeploy
 {
     public class GlobalSettings
     {
-        public int BenchCount = 5;
+        public bool TryWarpToStart = false;
+        public bool BenchwarpHotkey = false;
     }
 }
