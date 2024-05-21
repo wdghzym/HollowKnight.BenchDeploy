@@ -8,7 +8,10 @@ namespace BenchDeploy
 {
     public class GlobalSettings
     {
-        public bool TryWarpToStart = false;
         public bool BenchwarpHotkey = false;
+        public bool OriginalSceneName = false;
+        public bool TryWarpToStart = false;
+        //public int UIBenchListX = 1450;
+        //public int UIBenchListY = 600;
     }
 }

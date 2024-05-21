@@ -62,26 +62,59 @@ namespace BenchDeploy
             if (!(GameManager.UnsafeInstance != null && GameManager.instance.IsGamePaused()))
             {
                 lastkey = KeyCode.None;
-                keylength = keylength2 = -1;
+                if (keylength != -1 || keylength2 != -1)
+                {
+                    keylength = keylength2 = -1;
+                    BenchDeploy.uIBenchList.SetSelect(keylength2);
+                }
+                BenchDeploy.uIBenchList.Visibility = false;
                 return;
             }
+            else
+                BenchDeploy.uIBenchList.Visibility = true;
             if (InputHandler.Instance.inputActions.superDash.WasPressed)//按下
             {
                 keylength2 = -1;
+                BenchDeploy.uIBenchList.SetSelect(keylength2);
                 //BenchManager.SetBench(0);
                 DeployClickedbefore();
             }
             if (InputHandler.Instance.inputActions.left.WasPressed && InputHandler.Instance.inputActions.superDash.IsPressed) //按住+左
             {
                 keylength2++;
+                if (keylength2 >= BenchManager.GetBenchCount())
+                    keylength2 = -1;
+                BenchDeploy.uIBenchList.SetSelect(keylength2);
+            }
+            if (InputHandler.Instance.inputActions.right.WasPressed && InputHandler.Instance.inputActions.superDash.IsPressed) 
+            {
+                if (keylength2 != -1)
+                {
+                    BenchManager.LockBench(keylength2);
+                    keylength2 = -1;
+                    BenchDeploy.uIBenchList.SetSelect(keylength2);
+                }
+                else
+                {
+                    TopMenu.DeployClicked(null);
+                    if (AddBench())
+                    {
+                        if(BenchManager.TryGetBench(0,out Bench bench))
+                        {
+                            BenchManager.LockBench(0, true);
+                        }
+                    }
+                    BenchDeploy.uIBenchList.SetSelect(keylength2);
+                }
             }
             //if (InputHandler.Instance.inputActions.left.WasPressed && InputHandler.Instance.inputActions.superDash.IsPressed)
             if (InputHandler.Instance.inputActions.superDash.WasReleased && keylength2 >= 0)//松开
             {
-                if (keylength2 >= BenchManager.BenchCount)
-                    keylength2 = BenchManager.BenchCount - 1;
+                if (keylength2 >= BenchManager.GetBenchCount())
+                    keylength2 = BenchManager.GetBenchCount() - 1;
                 BenchManager.SetBench(keylength2);
                 keylength2 = -1;
+                BenchDeploy.uIBenchList.SetSelect(keylength2);
                 TopMenu.SetClicked(null);
                 ChangeScene.WarpToRespawn();
             }
@@ -90,6 +123,8 @@ namespace BenchDeploy
             {
                 TopMenu.DeployClicked(null);
                 AddBench();
+                keylength2 = -1;
+                BenchDeploy.uIBenchList.SetSelect(keylength2);
             }
             if (InputHandler.Instance.inputActions.up.WasPressed && InputHandler.Instance.inputActions.superDash.IsPressed)
             {
@@ -152,10 +187,14 @@ namespace BenchDeploy
                 if (key == wdw)
                 {
                     keylength++;
+                    BenchDeploy.uIBenchList.SetSelect(keylength);
                     BenchManager.SetBench(keylength);
                 }
-                else
+                else if(keylength != -1)
+                {
                     keylength = -1;
+                    BenchDeploy.uIBenchList.SetSelect(keylength);
+                }
                 if (key != wdw && key != wdd && lastkey == wdw)
                 {
                     BenchManager.SetBench(0);
@@ -169,9 +208,9 @@ namespace BenchDeploy
         {
             return new Bench()
             {
-                benchScene = Benchwarp.Benchwarp.LS.benchScene,
-                benchX = Benchwarp.Benchwarp.LS.benchX,
-                benchY = Benchwarp.Benchwarp.LS.benchY,
+                BenchScene = Benchwarp.Benchwarp.LS.benchScene,
+                BenchX = Benchwarp.Benchwarp.LS.benchX,
+                BenchY = Benchwarp.Benchwarp.LS.benchY,
             };
         }
         Bench lastDeployBench;
@@ -179,21 +218,26 @@ namespace BenchDeploy
         {
             lastDeployBench = GetCurrentDeployBench();
         }
-        private void AddBench()
+        private bool AddBench()
         {
             Bench bench = GetCurrentDeployBench();
             //compatible benchwarp options (cd no-air unsafe)
-            BenchDeploy.LogDebug($"add Bench {bench.benchX} {bench.benchY}/ {lastDeployBench.benchX} {lastDeployBench.benchY} / {HeroController.instance.transform.position.x} {HeroController.instance.transform.position.y}");
-            if ((lastDeployBench.benchScene == bench.benchScene
-                    && lastDeployBench.benchX == bench.benchX
-                    && lastDeployBench.benchY == bench.benchY)
-                && (lastDeployBench.benchScene != GameManager.instance.sceneName
-                    || lastDeployBench.benchX != HeroController.instance.transform.position.x
-                    || lastDeployBench.benchY != HeroController.instance.transform.position.y))
-                return;
+            BenchDeploy.LogDebug($"add Bench {bench.BenchX} {bench.BenchY}/ {lastDeployBench.BenchX} {lastDeployBench.BenchY} / {HeroController.instance.transform.position.x} {HeroController.instance.transform.position.y}");
+            if ((lastDeployBench.BenchScene == bench.BenchScene
+                    && lastDeployBench.BenchX == bench.BenchX
+                    && lastDeployBench.BenchY == bench.BenchY)
+                && (lastDeployBench.BenchScene != GameManager.instance.sceneName
+                    || lastDeployBench.BenchX != HeroController.instance.transform.position.x
+                    || lastDeployBench.BenchY != HeroController.instance.transform.position.y))
+                return false;
 
-            BenchManager.AddBench(bench);
-            BenchDeploy.LogDebug("added Bench!");
+            if (BenchManager.AddBench(bench))
+            {
+                BenchDeploy.LogDebug("added Bench!");
+                return true;
+            }
+            BenchDeploy.LogDebug("add Bench Fail!");
+            return false;
         }
 #if DEBUG
         int bossBenchidx = -1;

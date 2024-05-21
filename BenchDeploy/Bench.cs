@@ -8,14 +8,15 @@ namespace BenchDeploy
 {
     public struct Bench
     {
-        public float benchX;
-        public float benchY;
-        public string benchScene;
+        public bool Locked;
+        public float BenchX;
+        public float BenchY;
+        public string BenchScene;
 
         public Bench(string scene,float x, float y) { 
-            benchScene = scene;
-            benchX = x;
-            benchY = y;
+            BenchScene = scene;
+            BenchX = x;
+            BenchY = y;
         }
     }
 }

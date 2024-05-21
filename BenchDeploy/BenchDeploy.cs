@@ -15,7 +15,7 @@ namespace BenchDeploy
         public static GlobalSettings GS = new();
         public static SaveSettings LS = new();
         public static bool inGame = false;
-
+        internal static UIBenchList uIBenchList;
         public bool ToggleButtonInsideMenu => true;
 
         //public override List<ValueTuple<string, string>> GetPreloadNames()
@@ -45,8 +45,9 @@ namespace BenchDeploy
         {
             Instance = this;
             Localization.HookLocalization();
+            SceneName.Setup();
             GUIController.Setup();
-
+            uIBenchList = new UIBenchList();
             On.GameManager.StartNewGame += StartNewGame;
             On.GameManager.ContinueGame += ContinueGame;
             On.QuitToMenu.Start += QuitToMenu;
@@ -70,17 +71,20 @@ namespace BenchDeploy
         {
             orig(self, permadeathMode, bossRushMode);
             inGame = true;
+            BenchDeploy.uIBenchList.UpdateName();
         }
 
         private static void ContinueGame(On.GameManager.orig_ContinueGame orig, GameManager self)
         {
             orig(self);
             inGame = true;
+            BenchDeploy.uIBenchList.UpdateName();
         }
         private IEnumerator QuitToMenu(On.QuitToMenu.orig_Start orig, QuitToMenu self)
         {
             inGame = false;
             BenchManager.ClearBench();
+            uIBenchList.Visibility = false;
             return orig(self);
         }
         internal static new void LogDebug(string msg)
@@ -133,6 +137,14 @@ namespace BenchDeploy
                     Values = new string[] { "Enabled".L(), "Disabled".L() },
                     Saver = bs => GS.BenchwarpHotkey = bs == 0,
                     Loader = () => GS.BenchwarpHotkey ? 0 : 1
+                },
+
+                new IMenuMod.MenuEntry
+                {
+                    Name = "Original Scene Name".L(),
+                    Values = new string[] { "Enabled".L(), "Disabled".L() },
+                    Saver = bs => GS.OriginalSceneName = bs == 0,
+                    Loader = () => GS.OriginalSceneName ? 0 : 1
                 },
 
                 new IMenuMod.MenuEntry
