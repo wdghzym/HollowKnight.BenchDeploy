@@ -14,8 +14,8 @@ Dependencies Benchwarp needs to be set up correctly
    superDash + left(Joystick / D-Pad / keyboard) at Paused
 
 - Multi Bench (MAX 5 NOW)   
-   Deploy Bench use superDash + down (or Benchwarp hotkey DB. Disabled by default)   
-   Warp Bench use superDash + left left..(or Benchwarp hotkey ..WWD Disabled by default)  
+   Deploy Bench use superDash + down 
+   Warp Bench use superDash + left left..
    one bench each scene
 
 - Lock Deployed Bench   
@@ -91,8 +91,8 @@ Dependencies Benchwarp needs to be set up correctly
    超冲 + 左(摇杆 / 十字键 / 键盘) 在暂停界面  
 
 - 多个椅子(最多5个)   
-   放置椅子  用超冲+下 (或者 椅子MOD快捷键 "DB" 默认不启用)    
-   传放置椅子 用超冲+左左.. (或者 椅子MOD快捷键 "..WWD" 默认不启用)    
+   放置椅子  用超冲+下 
+   传放置椅子 用超冲+左左.. 
    每个场景只保存一个椅子  
 
 - 锁定放置的椅子   
